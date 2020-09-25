@@ -1,45 +1,97 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title or metadata.title }}</title>
-    <meta name="description" content="{{ description or metadata.description }}">
-    <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
-    <link rel="stylesheet" href="{{ '/css/prism-base16-monokai.dark.css' | url }}">
-    <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
-    <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
-  </head>
-  <body>
-    <header>
-      <h1 class="home"><a href="{{ '/' | url }}">{{ metadata.title }}</a></h1>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
-      <ul class="nav">
-      {%- for entry in collections.all | eleventyNavigation %}
-        <li class="nav-item{% if entry.url == page.url %} nav-item-active{% endif %}"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
-      {%- endfor %}
-      </ul>
-    </header>
+	<title>{{ title or metadata.title }}</title>
+	<meta name="description" content="{{ description or metadata.description }}">
 
-    <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
+	{% include "_includes/components/head-meta-tags.njk" %}
 
-      <!-- Delete this message -->
-      <div class="warning">
-        <ol>
-          <li>Edit the <code>_data/metadata.json</code> with your blog’s information.</li>
-          <li>(Optional) Edit <code>.eleventy.js</code> with your <a href="https://www.11ty.dev/docs/config/">configuration preferences</a>.</li>
-          <li>Delete this message from <code>_includes/layouts/base.njk</code>.</li>
-        </ol>
-        <p><em>This is an <a href="https://www.11ty.dev/">Eleventy project</a> created from the <a href="https://github.com/11ty/eleventy-base-blog"><code>eleventy-base-blog</code> repo</a>.</em></p>
-      </div>
-      <!-- Stop deleting -->
+	{% include "_includes/components/head-css-tags.njk" %}
 
-      {{ content | safe }}
-    </main>
+</head>
+<body>
 
-    <footer></footer>
+<header>
+	<div class="header-overlay">
+		<nav class="container">
+			<div class="navbar row align-items-center p-3 mb-5 text-xl-left text-center">
+				<h1 class="col-xl col-12 mb-0">
+					<a href="{{ '/' | url }}">
+						<img src="/images/logo.png" alt="Beast Moving Logo" class="">
+						<span class="d-block">{{ metadata.title }}</span>
+					</a>
+				</h1>
+				<div class="col-xl-auto col-12">
+					{#<a href="#" class="btn">Link 1</a>
+					<a href="#" class="btn">Link 1</a>
+					<a href="#" class="btn">Link 1</a>#}
+					<div style="color: #222222;">More links coming soon</div>
+				</div><!-- end col -->
+			</div><!-- end row -->
+		</nav>
 
-    <!-- Current page: {{ page.url | url }} -->
-  </body>
+		<div class="container text-center">
+			<h2 class="display-3 mb-5">Transportation <span class="d-xl-block"></span>Services for Texas</h2>
+
+			<div class="header-form">
+				<h3>Get in touch for a free quote</h3>
+				<form name="beast-moving-contact"
+					  netlify
+					  netlify-honeypot="testing-input"
+					  method="POST"
+					  class="mx-auto"
+					  style="max-width: 625px;">
+
+					<div class="row">
+						<div class="col-xl-4 form-group mb-4">
+							<label for="formName">Name</label>
+							<input type="text" class="form-control" id="formName" name="name">
+						</div><!-- end form group -->
+
+						<div class="col-xl-4 form-group mb-4">
+							<label for="formPhone">Phone</label>
+							<input type="tel" class="form-control" id="formPhone" name="phone">
+						</div><!-- end form group -->
+
+						<div class="col-xl-4 form-group mb-4">
+							<label for="formEmail">Email</label>
+							<input type="email" class="form-control" id="formEmail" name="email">
+						</div><!-- end form group -->
+					</div><!-- end row -->
+
+
+
+
+					<div class="form-group mb-4">
+						<label for="formMessage">How can we help you?</label>
+						<textarea class="form-control" id="formMessage" rows="4" name="message"></textarea>
+					</div><!-- end form group -->
+
+					<div class="d-none">
+						<label for="testing-input" class="sr-only">Testing Input</label>
+						<input type="text"
+							   name="testing-input"
+							   id="testing-input"
+							   placeholder="Video URL">
+					</div><!-- end from group -->
+
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary btn-lg">Send</button>
+					</div><!-- end form group -->
+				</form>
+			</div><!-- end header form -->
+		</div><!-- end container -->
+	</div><!-- end header overlay -->
+</header>
+
+<main>
+	{{ content | safe }}
+</main>
+
+<footer class="text-center py-5 font-weight-bold">&copy; {% dateYear %} Beast Moving</footer>
+
+</body>
 </html>

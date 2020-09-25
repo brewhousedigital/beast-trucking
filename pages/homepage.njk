@@ -1,0 +1,25 @@
+---
+layout: layouts/base.njk
+permalink: /
+---
+
+<div class="triangle-map">
+	<div class="triangle-map-overlay">
+		<div class="row no-gutters justify-content-between text-center display-1 py-5">
+			<div class="col-12 mb-5" style="font-size: 50%;">Now Serving</div>
+			<div class="col-12 mb-xl-5">DFW</div>
+			<div class="col-xl-6">Austin</div>
+			<div class="col-xl-6">Houston</div>
+		</div><!-- end row -->
+	</div><!-- end overlay -->
+</div><!-- end triangle map -->
+
+<div class="container d-none">
+<h1>Latest 3 Posts</h1>
+
+{% set postslist = collections.posts | head(-3) %}
+{% set postslistCounter = collections.posts | length %}
+{% include "postslist.njk" %}
+
+<p>More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.</p>
+</div><!-- end container -->
