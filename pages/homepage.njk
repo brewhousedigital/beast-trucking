@@ -3,6 +3,50 @@ layout: layouts/base.njk
 permalink: /
 ---
 
+<div class="homepage-bg text-xl-left text-center">
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-7">
+				<h2>Transportation Services for Texas</h2>
+				<p>Let us handle your equipment. We'll get it to where it needs to go.</p>
+			</div><!-- end col -->
+		</div><!-- end row -->
+	</div><!-- end container -->
+</div><!-- end bg -->
+
+
+
+<div class="bg-green py-5 text-center text-white mb-5">
+	<h2>We're more than a shipping company</h2>
+
+	<p class="mb-0">We aren't a national chain, ran out of a remote office hundreds of of miles away. <span class="d-xl-block"></span>We're right here in the heart of DFW. The people you'll work with are the same people who run Beast Moving.</p>
+</div>
+
+
+
+
+
+
+<div class="container py-5 text-center">
+	<h2 class="mb-5">Let us help you with moving:</h2>
+
+	<div class="row justify-content-center mb-5">
+		{% for item in homepageShippingList %}
+			<div class="col-auto mb-4">
+				<div class="{{ css.card }} px-5">
+					<h3>{{ item }}</h3>
+				</div><!-- end card -->
+			</div><!-- end col -->
+		{% endfor %}
+	</div><!-- end row -->
+</div><!-- end container -->
+
+
+
+
+
+
+
 <div class="triangle-map">
 	<div class="triangle-map-overlay">
 		<div class="row no-gutters justify-content-between text-center display-1 py-5">
@@ -13,13 +57,3 @@ permalink: /
 		</div><!-- end row -->
 	</div><!-- end overlay -->
 </div><!-- end triangle map -->
-
-<div class="container d-none">
-<h1>Latest 3 Posts</h1>
-
-{% set postslist = collections.posts | head(-3) %}
-{% set postslistCounter = collections.posts | length %}
-{% include "postslist.njk" %}
-
-<p>More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.</p>
-</div><!-- end container -->

@@ -1,0 +1,8 @@
+@media screen and (max-width: 1500px) {
+	.homepage-bg {
+		border-right: 15px solid transparent;
+		border-left: 15px solid transparent;
+		background-position: center right;
+		background-size: 40%;
+	}
+}

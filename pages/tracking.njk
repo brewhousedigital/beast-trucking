@@ -1,0 +1,48 @@
+---
+layout: layouts/base.njk
+permalink: /tracking/
+---
+
+
+<div class="contact-bg container py-5 text-center">
+	<div class="tracking-header pb-5 border-bottom mb-5">
+		<h2 class="mb-4">Tracking</h2>
+		<p class="mb-0">See a real time map of your shipment</p>
+	</div><!-- end tracking header -->
+
+	<form id="tracking-form" type="get" class="form-group mx-auto" style="max-width: 600px;">
+		<label for="tracking-num">Enter Your Tracking Number</label>
+
+		<div class="input-group mb-3">
+			<input type="text" class="form-control form-control-lg" placeholder="ABC-123-ABC-123" id="tracking-num" name="tracking">
+			<div class="input-group-append">
+				<button class="btn btn-primary btn-lg" type="submit">Track</button>
+			</div>
+		</div><!-- end input group -->
+	</form><!-- end form group -->
+
+
+	<div id="tracking-map">
+		<div class="row mb-5 text-left">
+			<div class="col-xl-4">
+				<p class="font-weight-bold">Recent Activity</p>
+				<ul id="tracker-shipment-activity">
+					<li>Shipment Completed <span class="d-block small text-muted">Oct 15, 2020 - 5:30pm</span></li>
+					<li>Unloading Shipment <span class="d-block small text-muted">Oct 15, 2020 - 5:25pm</span></li>
+					<li>Arrived at Austin <span class="d-block small text-muted">Oct 15, 2020 - 5:20pm</span></li>
+					<li>Paused at Temple TX for Strip Club <span class="d-block small text-muted">Oct 15, 2020 - 5:15pm</span></li>
+					<li>Left DFW <span class="d-block small text-muted">Oct 15, 2020 - 5:10pm</span></li>
+					<li>Shipment Packed <span class="d-block small text-muted">Oct 15, 2020 - 5:05pm</span></li>
+					<li>Shipment Received <span class="d-block small text-muted">Oct 15, 2020 - 5:00pm</span></li>
+				</ul>
+			</div><!-- end col -->
+
+			<div class="col-xl-8">
+				<img src="/images/shipping-placeholder.jpg" alt="" class="rounded-xl">
+			</div><!-- end col -->
+		</div><!-- end row -->
+
+		<div class="text-center"><a href="/tracking/">Track Another Shipment</a></div>
+	</div>
+
+</div><!-- end container -->

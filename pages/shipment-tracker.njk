@@ -1,0 +1,76 @@
+---
+layout: layouts/base.njk
+permalink: /shipment-tracker/
+---
+
+<div class="container">
+	<h1>Shipment Tracker</h1>
+
+	<p class="my-labels font-weight-bold" accesskey="F">First Name</p>
+	<p class="my-labels font-weight-bold" accesskey="P">Phone</p>
+	<p class="my-labels font-weight-bold" accesskey="v">Privacy</p>
+
+	<form id="httpbin-test" data-fetch>
+		<button type="submit" class="btn btn-primary btn-lg">Fetch!!!</button>
+	</form>
+	<div id="httpbin-test-results"></div>
+</div><!-- end container -->
+
+
+{#<script src="https://api.backendless.com/sdk/js/latest/backendless.min.js"></script>#}
+<script>
+	const APP_ID = 'BFD3873C-0565-EBFE-FFA8-8001D60AC000';
+	const API_KEY = '8561E43D-334E-44E4-B05E-40A81D6E081A';
+	//Backendless.initApp(APP_ID, API_KEY);
+
+
+
+	function addKeyHint(el) {
+		let text = el.innerText;
+		let newText = "";
+		let ak = el.getAttribute("accesskey");
+
+		console.log(text);
+
+		[...text].forEach(function(letter) {
+			console.log(letter);
+			if(letter === ak) {
+				newText += "<span style='text-decoration: underline'>" + letter + "</span>";
+				ak = null;
+			} else {
+				newText += letter;
+			}
+		});
+
+		el.innerHTML = newText;
+	}
+
+	let myLabels = document.querySelectorAll(".container p");
+	myLabels.forEach(function(el) {
+		//addKeyHint(el);
+		//console.log(el);
+	});
+
+
+	const targetURL = "https://httpbin.org/post";
+	const form = document.getElementById("httpbin-test");
+	const output = document.getElementById("httpbin-test-results");
+
+	form.addEventListener("submit", function(e) {
+		e.preventDefault();
+
+		let data = new FormData(form);
+
+		fetch(targetURL, {
+			method: "POST",
+			body: data
+		}).then(response => {
+			return response.json();
+		}).then(text => {
+			console.log(text);
+		}).catch(error => {
+			console.log(error);
+		});
+	})
+
+</script>

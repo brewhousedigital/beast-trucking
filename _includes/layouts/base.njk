@@ -14,77 +14,23 @@
 </head>
 <body>
 
-<header>
-	<div class="header-overlay">
-		<nav class="container">
-			<div class="navbar row align-items-center p-3 mb-5 text-xl-left text-center">
-				<h1 class="col-xl col-12 mb-0">
-					<a href="{{ '/' | url }}">
-						<img src="/images/logo.png" alt="Beast Moving Logo" class="">
-						<span class="d-block">{{ metadata.title }}</span>
-					</a>
-				</h1>
-				<div class="col-xl-auto col-12">
-					{#<a href="#" class="btn">Link 1</a>
-					<a href="#" class="btn">Link 1</a>
-					<a href="#" class="btn">Link 1</a>#}
-					<div style="color: #222222;">More links coming soon</div>
-				</div><!-- end col -->
-			</div><!-- end row -->
-		</nav>
-
-		<div class="container text-center">
-			<h2 class="display-3 mb-5">Transportation <span class="d-xl-block"></span>Services for Texas</h2>
-
-			<div class="header-form">
-				<h3>Get in touch for a free quote</h3>
-				<form name="beast-moving-contact"
-					  netlify
-					  netlify-honeypot="testing-input"
-					  method="POST"
-					  class="mx-auto"
-					  style="max-width: 625px;">
-
-					<div class="row">
-						<div class="col-xl-4 form-group mb-4">
-							<label for="formName">Name</label>
-							<input type="text" class="form-control" id="formName" name="name">
-						</div><!-- end form group -->
-
-						<div class="col-xl-4 form-group mb-4">
-							<label for="formPhone">Phone</label>
-							<input type="tel" class="form-control" id="formPhone" name="phone">
-						</div><!-- end form group -->
-
-						<div class="col-xl-4 form-group mb-4">
-							<label for="formEmail">Email</label>
-							<input type="email" class="form-control" id="formEmail" name="email">
-						</div><!-- end form group -->
-					</div><!-- end row -->
-
-
-
-
-					<div class="form-group mb-4">
-						<label for="formMessage">How can we help you?</label>
-						<textarea class="form-control" id="formMessage" rows="4" name="message"></textarea>
-					</div><!-- end form group -->
-
-					<div class="d-none">
-						<label for="testing-input" class="sr-only">Testing Input</label>
-						<input type="text"
-							   name="testing-input"
-							   id="testing-input"
-							   placeholder="Video URL">
-					</div><!-- end from group -->
-
-					<div class="form-group">
-						<button type="submit" class="btn btn-primary btn-lg">Send</button>
-					</div><!-- end form group -->
-				</form>
-			</div><!-- end header form -->
-		</div><!-- end container -->
-	</div><!-- end header overlay -->
+<header class="border-bottom">
+	<nav class="container">
+		<div class="navbar row align-items-center text-xl-left text-center">
+			<h1 class="col-xl col-12 mb-0">
+				<a href="{{ '/' | url }}" class="d-block text-decoration-none">
+					<img src="/images/logo-head.png" alt="Beast Moving Logo" class="">
+					<span class="d-inline-block">{{ metadata.title }}</span>
+				</a>
+			</h1>
+			<div class="col-xl-auto col-12">
+				<a href="/" class="btn">Home</a>
+				<a href="/tracking/" class="btn">Tracking</a>
+				<a href="/services/" class="btn">Services</a>
+				<a href="/contact/" class="btn">Contact Us</a>
+			</div><!-- end col -->
+		</div><!-- end row -->
+	</nav>
 </header>
 
 <main>
@@ -92,6 +38,15 @@
 </main>
 
 <footer class="text-center py-5 font-weight-bold">&copy; {% dateYear %} Beast Moving</footer>
+
+
+
+<script>
+	{% set js %}
+	{% include "_includes/js/scripts.js" %}
+	{% endset %}
+	{{ js | safe }}
+</script>
 
 </body>
 </html>

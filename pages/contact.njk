@@ -1,0 +1,55 @@
+---
+layout: layouts/base.njk
+permalink: /contact/
+---
+
+
+<div class="contact-bg container py-5 text-center">
+	<h2 class="mb-4">Contact Us</h2>
+	<p class="mb-5">We'll map out what you need and give you a free quote</p>
+
+	<form name="beast-moving-contact"
+		  netlify
+		  netlify-honeypot="testing-input"
+		  method="POST"
+		  class="mx-auto"
+		  style="max-width: 625px;">
+
+		<div class="row">
+			<div class="col-xl-4 form-group mb-4">
+				<label for="formName">Name</label>
+				<input type="text" class="form-control" id="formName" name="name">
+			</div><!-- end form group -->
+
+			<div class="col-xl-4 form-group mb-4">
+				<label for="formPhone">Phone</label>
+				<input type="tel" class="form-control" id="formPhone" name="phone">
+			</div><!-- end form group -->
+
+			<div class="col-xl-4 form-group mb-4">
+				<label for="formEmail">Email</label>
+				<input type="email" class="form-control" id="formEmail" name="email">
+			</div><!-- end form group -->
+		</div><!-- end row -->
+
+
+
+
+		<div class="form-group mb-4">
+			<label for="formMessage">How can we help you?</label>
+			<textarea class="form-control" id="formMessage" rows="4" name="message"></textarea>
+		</div><!-- end form group -->
+
+		<div class="d-none">
+			<label for="testing-input" class="sr-only">Testing Input</label>
+			<input type="text"
+				   name="testing-input"
+				   id="testing-input"
+				   placeholder="Video URL">
+		</div><!-- end from group -->
+
+		<div class="form-group">
+			<button type="submit" class="btn btn-primary btn-lg">Send</button>
+		</div><!-- end form group -->
+	</form>
+</div><!-- end container -->

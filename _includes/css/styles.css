@@ -1,70 +1,122 @@
-h1, h2, h3, h4, h5, h6 {
+body {
+	font-size: 20px;
+	--color-green: #2ecc71;
+	--color-lightGrey: #f9f9f9;
+}
+h1 {
 	font-family: 'Bungee Inline', cursive;
 }
 
-
 header {
-	background-image: url("/images/header-lg.jpg");
-	background-size: cover;
-	background-position: center;
 	color: #fff;
-	/*margin-bottom: 30px;*/
-}
-
-.header-overlay {
-	background-color: rgba(0,0,0,0.4);
-	padding: 15px 8px 80px 8px;
-	backdrop-filter: blur(10px);
-}
-
-header .display-3 {
-
-}
-
-nav {
-
-}
-
-.navbar {
-	/*background-color: rgba(137, 86, 60, 0.5);*/
-	border: 7px solid #4b352f;
-	border-top-left-radius: 50px;
-	border-bottom-left-radius: 50px;
-	backdrop-filter: blur(10px);
-	background-color: rgba(255, 255, 255, 0.8);
-}
-
-.navbar h1 img {
-	position: absolute;
-	top: -38px;
-	left: -44px;
-	max-width: 130px;
-}
-
-.navbar h1 span {
-	margin-left: 80px;
-}
-
-.navbar a {
-	color: #222222;
 }
 
 .btn {
 	font-weight: 700;
 }
 
-.form-control {
-	border: 0;
+.card {background-color: #fff;}
+
+.bg-grey {
+	background-color: var(--color-lightGrey);
 }
+
+.bg-green {
+	background-color: var(--color-green);
+}
+
+.text-white {color: #fff;}
+
+.rounded-xl {border-radius: 20px;}
+
+
+
+
+
+
+
+
+
+
+
+
+main {
+	min-height: calc(100vh - 215px);
+}
+
+nav {
+	padding-top: 10px;
+}
+
+nav h1 a {
+	color: #222;
+}
+
+nav h1 img {
+	max-width: 88px;
+	padding-bottom: 15px;
+}
+
+nav .btn {
+	color: #555;
+}
+
+.homepage-bg {
+	background-image: url("/images/homepage-bg-isolated-f.jpg");
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	padding: 160px 0;
+	border-right: 30px solid transparent;
+	border-left: 30px solid transparent;
+	border-bottom: 60px solid transparent;
+}
+
+.homepage-bg h2,
+.contact-bg h2,
+.services-bg h2 {
+	font-weight: 700;
+	font-size: 76px;
+}
+
+.homepage-bg p {
+	font-size: 41px;
+}
+
 
 .triangle-map {
 	background-image: url("/images/triangle-map.jpg");
-	background-position: center;
 	background-size: cover;
+	background-position: center;
 }
 
 .triangle-map-overlay {
 	backdrop-filter: blur(2px);
-	background-color: rgba(255,255,255,0.5);
+	background-color: rgba(255,255,255,.5);
 	padding: 30px 0 60px 0;
 }
+
+.services-bg .service-img {
+	max-width: 350px;
+}
+
+#tracking-form,
+#tracking-map {
+	display: none;
+	transition: all 1000ms;
+	opacity: 0;
+}
+
+#tracking-form.loaded,
+#tracking-map.loaded {
+	opacity: 1;
+}
+
+#tracker-shipment-activity li {
+	margin-bottom: 12px;
+}
+
+#tracker-shipment-activity li:first-child {
+	list-style-type: circle;
+	color: var(--color-green);
+}
+
